@@ -90,14 +90,14 @@ function Test-Prerequisites {
     
     # Check for TypeScript compiler
     try {
-        $tscVersion = & tsc --version 2>$null
+        $tscVersion = & npx tsc --version 2>$null
         if ($LASTEXITCODE -eq 0 -and $tscVersion) {
             Write-Log "TypeScript version: $tscVersion" -Level "SUCCESS"
         } else {
             Write-Log "TypeScript not found. Installing TypeScript..." -Level "WARNING"
-            $installResult = & npm install -g typescript 2>&1
+            $installResult = & npm install typescript 2>&1
             if ($LASTEXITCODE -eq 0) {
-                $tscVersion = & tsc --version 2>$null
+                $tscVersion = & npx tsc --version 2>$null
                 if ($LASTEXITCODE -eq 0 -and $tscVersion) {
                     Write-Log "TypeScript installed: $tscVersion" -Level "SUCCESS"
                 } else {
@@ -200,7 +200,7 @@ function Build-AutounattendFile {
     # First, compile TypeScript
     Write-Log "Compiling TypeScript..."
     try {
-        $compileResult = tsc 2>&1
+        $compileResult = npx tsc 2>&1
         if ($LASTEXITCODE -ne 0) {
             Write-Log "TypeScript compilation failed: $compileResult" -Level "ERROR"
             return $false

@@ -153,8 +153,7 @@ describe('AutoUnattendBuilder', () => {
     describe('Error Handling', () => {
         test('should handle file system errors gracefully', () => {
             // Mock fs.writeFileSync to throw an error
-            const originalWriteFileSync = fs.writeFileSync;
-            fs.writeFileSync = jest.fn().mockImplementation(() => {
+            const writeFileSyncSpy = jest.spyOn(fs, 'writeFileSync').mockImplementation(() => {
                 throw new Error('Permission denied');
             });
             
@@ -163,7 +162,7 @@ describe('AutoUnattendBuilder', () => {
             expect(result.error).toContain('Permission denied');
             
             // Restore original function
-            fs.writeFileSync = originalWriteFileSync;
+            writeFileSyncSpy.mockRestore();
         });
     });
 });
