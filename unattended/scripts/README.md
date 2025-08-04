@@ -122,10 +122,10 @@ shutdown.exe /r /t 5 /f /c "Setup complete, restarting..."
 
 ## Important Notes
 
-⚠️ **Timing**: This script runs AFTER OOBE, not during it
-⚠️ **Context**: Runs as SYSTEM, not as any user
-⚠️ **Network**: Network connectivity may be limited
-⚠️ **User Profile**: No user profiles are loaded yet
+**Timing**: This script runs AFTER OOBE, not during it
+**Context**: Runs as SYSTEM, not as any user
+**Network**: Network connectivity may be limited
+**User Profile**: No user profiles are loaded yet
 
-✅ **Perfect for**: Device enrollment, policy application, system configuration
-✅ **Not suitable for**: User-specific settings, profile customization
+**Perfect for**: Device enrollment, policy application, system configuration
+**Not suitable for**: User-specific settings, profile customization

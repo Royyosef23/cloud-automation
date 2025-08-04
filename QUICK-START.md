@@ -1,4 +1,4 @@
-# 🚀 Quick Start Example
+# Quick Start Example
 
 This guide shows you how to use the enhanced CloudIT USB Automations in under 5 minutes.
 
@@ -42,13 +42,13 @@ npm run verify
 
 **Expected Output:**
 ```
-🚀 CloudIT USB Automations - Testing Enhanced Features
+CloudIT USB Automations - Testing Enhanced Features
 ✓ AutoUnattendBuilder imports successfully
 ✓ Build completed successfully
 ✓ Validation: PASSED
 ✓ Build duration: 6ms
 ✓ Passes processed: 7
-🎉 Enhancement verification completed!
+Enhancement verification completed!
 ```
 
 ## Step 2: Build Your First XML
@@ -68,10 +68,10 @@ npm run build
 [2025-07-24T18:39:04.277Z] INFO  [AutoUnattendBuilder] File size: 4,776 bytes
 
 === XML Validation Report ===
-Status: ✅ VALID
-⚠️  WARNINGS:
+Status: VALID
+WARNING:
   • Recommended component missing: Microsoft-Windows-Setup
-💡 SUGGESTIONS:
+SUGGESTIONS:
   • Consider adding Windows Update configuration
 ```
 
@@ -136,16 +136,16 @@ npm run dev
 # Watch mode - auto-compile on file changes
 ```
 
-## 🎯 What You Get
+## What You Get
 
-✅ **Enhanced XML Generation** with validation and security checks  
-✅ **Real-time Performance Monitoring** with build statistics  
-✅ **Comprehensive Error Handling** with actionable messages  
-✅ **Advanced Logging** with timestamps and context  
-✅ **Automatic Configuration** with sensible defaults  
-✅ **Complete Testing Suite** ensuring reliability  
+**Enhanced XML Generation** with validation and security checks  
+**Real-time Performance Monitoring** with build statistics  
+**Comprehensive Error Handling** with actionable messages  
+**Advanced Logging** with timestamps and context  
+**Automatic Configuration** with sensible defaults  
+**Complete Testing Suite** ensuring reliability  
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 | Issue | Quick Fix |
 |-------|-----------|
@@ -167,7 +167,7 @@ Get-ExecutionPolicy     # Should allow script execution
 Test-Path "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg\oscdimg.exe"  # Should be True if ADK installed
 ```
 
-## 🎉 You're Ready!
+## You're Ready!
 
 Your enhanced CloudIT USB Automations is now set up with:
 - Professional-grade logging and monitoring
@@ -175,4 +175,4 @@ Your enhanced CloudIT USB Automations is now set up with:
 - Real-time performance tracking
 - Comprehensive error handling
 
-**Next step**: Place your Windows ISO in `iso/source/` and run `.\run.ps1` to create your first automated Windows installation! 🚀
+**Next step**: Place your Windows ISO in `iso/source/` and run `.\run.ps1` to create your first automated Windows installation!

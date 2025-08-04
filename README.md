@@ -1,8 +1,8 @@
 # CloudIT USB Automations
 
-🚀 **Automated Windows ISO customization with unattended installation** - Now with enhanced logging, validation, and performance monitoring!
+**Automated Windows ISO customization with unattended installation** - Now with enhanced logging, validation, and performance monitoring!
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 - **Windows 10/11** with Administrator privileges
@@ -26,9 +26,9 @@ npm run compile
 .\run.ps1
 ```
 
-> 📖 **New to this project?** Check out [QUICK-START.md](QUICK-START.md) for a detailed 5-minute tutorial with examples!
+> **New to this project?** Check out [QUICK-START.md](QUICK-START.md) for a detailed 5-minute tutorial with examples!
 
-## 🎯 Available Commands
+## Available Commands
 
 ```powershell
 # Core Operations
@@ -49,49 +49,49 @@ npm run clean          # Clean build artifacts
 .\scripts\build-iso.ps1         # Build ISO only
 ```
 
-## 🚀 Enhanced Features (NEW!)
+## Enhanced Features (NEW!)
 
 ### **Smart Logging & Monitoring**
-- ✅ **Real-time build statistics** (duration, passes processed, file size)
-- ✅ **Structured logging** with timestamps and context
-- ✅ **Performance tracking** and memory usage monitoring
-- ✅ **Comprehensive error reporting** with actionable messages
+- **Real-time build statistics** (duration, passes processed, file size)
+- **Structured logging** with timestamps and context
+- **Performance tracking** and memory usage monitoring
+- **Comprehensive error reporting** with actionable messages
 
 ### **Advanced XML Validation**
-- ✅ **Security checks** for passwords and auto-logon settings
-- ✅ **Component compatibility** validation for Windows versions
-- ✅ **Optimization suggestions** for better performance
-- ✅ **Detailed validation reports** with warnings and tips
+- **Security checks** for passwords and auto-logon settings
+- **Component compatibility** validation for Windows versions
+- **Optimization suggestions** for better performance
+- **Detailed validation reports** with warnings and tips
 
 ### **Build Intelligence**
-- ✅ **Automatic configuration** generation with sensible defaults
-- ✅ **Pass file validation** and missing component detection
-- ✅ **Build success tracking** with detailed metrics
-- ✅ **Enhanced error recovery** and graceful failure handling
+- **Automatic configuration** generation with sensible defaults
+- **Pass file validation** and missing component detection
+- **Build success tracking** with detailed metrics
+- **Enhanced error recovery** and graceful failure handling
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 cloudit-usb-automations/
-├── unattended/              # 🎯 Unattended installation config
+├── unattended/              # Unattended installation config
 │   ├── passes/             # XML fragments for setup phases
 │   ├── templates/          # Main XML template
 │   ├── build/             # Generated autounattend.xml
 │   └── merge.ts           # Enhanced XML builder
-├── src/utils/              # 🔧 Enhanced utilities (NEW!)
+├── src/utils/              # Enhanced utilities (NEW!)
 │   ├── logger.ts          # Advanced logging system
 │   ├── config.ts          # Configuration management
 │   ├── xmlValidator.ts    # XML validation & security
 │   └── performance.ts     # Performance monitoring
-├── iso/                    # 💿 ISO management
+├── iso/                    # ISO management
 │   ├── source/           # Original ISO files
 │   ├── extracted/        # Modified ISO contents
 │   └── result/           # Final customized ISOs
-├── scripts/                # ⚙️ PowerShell automation
-└── tests/                  # 🧪 Test suite & verification
+├── scripts/                # PowerShell automation
+└── tests/                  # Test suite & verification
 ```
 
-## 🎛️ Customization
+## Customization
 
 ### **Modify Installation Passes**
 Edit XML files in `unattended/passes/`:
@@ -115,10 +115,10 @@ Edit `unattended/passes/oobesystem.xml`:
 ### **Add Post-Installation Scripts**
 Place PowerShell scripts in `unattended/scripts/` - they'll be automatically included and executed on first logon.
 
-## 📊 Build Output Example
+## Build Output Example
 
 ```
-🚀 CloudIT USB Automations - Enhanced Build Process
+CloudIT USB Automations - Enhanced Build Process
 
 [2025-07-24T18:35:01.098Z] INFO  [AutoUnattendBuilder] Starting autounattend.xml build process
 [2025-07-24T18:35:01.105Z] INFO  [AutoUnattendBuilder] Duration: 5ms
@@ -126,16 +126,16 @@ Place PowerShell scripts in `unattended/scripts/` - they'll be automatically inc
 [2025-07-24T18:35:01.107Z] INFO  [AutoUnattendBuilder] File size: 4,776 bytes
 
 === XML Validation Report ===
-Status: ✅ VALID
-⚠️  WARNINGS:
+Status: VALID
+WARNINGS:
   • Recommended component missing: Microsoft-Windows-Setup
-💡 SUGGESTIONS:
+SUGGESTIONS:
   • Consider adding Windows Update configuration
   • Consider adding explicit disk configuration
 ===========================
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### **Common Issues**
 
@@ -163,16 +163,16 @@ npm run build
 - **Build logs**: Displayed during compilation and build process
 - **Performance metrics**: Duration, memory usage, and statistics
 
-## 🔒 Security Notes
+## Security Notes
 
 - Default password is `CloudIT` (hardcoded) - **change for production**
 - Auto-logon is enabled by default - **consider security implications**
 - Post-installation scripts run with administrator privileges
 - Review and customize scripts for your security requirements
 
-## 🎯 What's New in This Version
+## What's New in This Version
 
-✨ **Enhanced Features:**
+**Enhanced Features:**
 - Real-time performance monitoring and build statistics
 - Advanced XML validation with security checks and suggestions
 - Structured logging with timestamps and context tracking
@@ -180,17 +180,17 @@ npm run build
 - Automated configuration management with sensible defaults
 - Complete test suite with 100% success rate validation
 
-🚀 **Improved Developer Experience:**
+**Improved Developer Experience:**
 - Better error messages with actionable solutions
 - Build performance metrics (3-12ms average build time)
 - Memory usage tracking and optimization suggestions
 - Detailed validation reports with warnings and tips
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file for details.
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -199,7 +199,7 @@ MIT License - See LICENSE file for details.
 
 ---
 
-**Ready to create your customized Windows installation? Run `npm run verify` to test all features!** 🚀
+**Ready to create your customized Windows installation? Run `npm run verify` to test all features!**
 choco install nodejs -y
 # Option 3: Using Winget
 winget install OpenJS.NodeJS
@@ -312,11 +312,11 @@ Test-Path "${env:ProgramFiles(x86)}\Windows Kits\10\Assessment and Deployment Ki
 
 The script will automatically:
 
-1. **✅ Check Prerequisites**: Verify Node.js, Windows ADK, and admin privileges
-2. **✅ Build Configuration**: Merge XML fragments into `autounattend.xml`
-3. **✅ Extract ISO**: Mount and copy your Windows ISO contents
-4. **✅ Inject Automation**: Add unattended file and post-install scripts
-5. **✅ Build New ISO**: Create your customized Windows ISO (if ADK is installed)
+1. **Check Prerequisites**: Verify Node.js, Windows ADK, and admin privileges
+2. **Build Configuration**: Merge XML fragments into `autounattend.xml`
+3. **Extract ISO**: Mount and copy your Windows ISO contents
+4. **Inject Automation**: Add unattended file and post-install scripts
+5. **Build New ISO**: Create your customized Windows ISO (if ADK is installed)
 
 **Expected Output:**
 ```
@@ -385,7 +385,7 @@ The project includes a pre-configured unattended setup that:
 
 ## Testing
 
-⚠️ **Always test the generated ISO in a virtual machine before using on physical hardware!**
+**Always test the generated ISO in a virtual machine before using on physical hardware!**
 
 Recommended testing workflow:
 1. Create the customized ISO using this tool
@@ -398,17 +398,17 @@ Recommended testing workflow:
 
 ### Prerequisites Issues
 
-**❌ "This script must be run as Administrator"**
+**"This script must be run as Administrator"**
 - **Solution**: Right-click PowerShell and select "Run as administrator"
 - **Alternative**: Use the `run-admin.bat` file which automatically requests admin privileges
 
-**❌ "Node.js not found"**
+**"Node.js not found"**
 - **Solution 1**: Install from https://nodejs.org/ (run installer as Admin)
 - **Solution 2**: Using Chocolatey: `choco install nodejs -y`
 - **Solution 3**: Using Winget: `winget install OpenJS.NodeJS`
 - **Verify**: Run `node --version` in Command Prompt
 
-**❌ "oscdimg.exe not found" / "Windows ADK not found"**
+**"oscdimg.exe not found" / "Windows ADK not found"**
 - **Solution**: Install Windows ADK from Microsoft
   1. Download: https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install
   2. Run installer as Administrator
@@ -418,21 +418,21 @@ Recommended testing workflow:
 
 ### Execution Issues
 
-**❌ "Cannot bind argument to parameter 'Path' because it is null"**
+**"Cannot bind argument to parameter 'Path' because it is null"**
 - **Cause**: PowerShell execution policy or path detection issue
 - **Solution**: Run with explicit execution policy:
   ```powershell
   powershell -ExecutionPolicy Bypass -File ".\run.ps1"
   ```
 
-**❌ "No ISO files found in iso\source"**
+**"No ISO files found in iso\source"**
 - **Solution**: Place a Windows ISO file in the `iso\source\` directory
 - **Example**: 
   ```powershell
   Copy-Item "C:\Downloads\Windows11.iso" ".\iso\source\"
   ```
 
-**❌ "ISO file not found"**
+**"ISO file not found"**
 - **Check**: Verify the ISO file exists and is not corrupted
 - **Check**: Ensure the file has `.iso` extension
 - **Solution**: Use `-IsoPath` parameter to specify exact location:
@@ -440,25 +440,25 @@ Recommended testing workflow:
   .\run.ps1 -IsoPath "C:\full\path\to\windows.iso"
   ```
 
-**❌ "Error mounting ISO"**
+**"Error mounting ISO"**
 - **Cause**: ISO file is corrupted or in use
 - **Solution 1**: Close any programs that might be using the ISO
 - **Solution 2**: Restart computer and try again
 - **Solution 3**: Re-download the ISO file from Microsoft
 
-**❌ "Robocopy completed with exit code"**
+**"Robocopy completed with exit code"**
 - **Cause**: Usually not an error - Robocopy exit codes 0-1 are success
 - **Action**: Check if files were copied to `iso\extracted\` directory
 - **If files missing**: Run script again or check disk space
 
 ### XML Configuration Issues
 
-**❌ "XML validation errors"**
+**"XML validation errors"**
 - **Check**: Syntax in `unattended\passes\*.xml` files
 - **Solution**: Ensure all XML files have proper opening/closing tags
 - **Reset**: Restore original XML files from repository
 
-**❌ "Merge script failed"**
+**"Merge script failed"**
 - **Check**: Node.js is properly installed
 - **Solution**: Navigate to unattended folder and test manually:
   ```powershell
@@ -470,13 +470,13 @@ Recommended testing workflow:
 
 ### Permission Issues
 
-**❌ "Access denied" errors**
+**"Access denied" errors**
 - **Cause**: Insufficient permissions or antivirus interference
 - **Solution 1**: Run PowerShell as Administrator
 - **Solution 2**: Temporarily disable real-time antivirus scanning
 - **Solution 3**: Add project folder to antivirus exclusions
 
-**❌ "ISO building fails with permissions"**
+**"ISO building fails with permissions"**
 - **Cause**: Files in extracted folder are read-only
 - **Solution**: Script should handle this automatically, but you can manually run:
   ```powershell
@@ -485,7 +485,7 @@ Recommended testing workflow:
 
 ### Performance Issues
 
-**❌ "Script runs very slowly"**
+**"Script runs very slowly"**
 - **Cause**: Large ISO files or slow disk
 - **Normal**: Extracting 5GB+ ISO files takes 5-15 minutes
 - **Tip**: Use SSD storage for better performance

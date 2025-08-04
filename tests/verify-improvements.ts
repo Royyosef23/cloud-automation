@@ -2,7 +2,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-console.log('🚀 CloudIT USB Automations - Testing Enhanced Features\n');
+console.log('CloudIT USB Automations - Testing Enhanced Features\n');
 
 // Test 1: Check if enhanced utilities exist
 console.log('1. Checking enhanced utilities...');
@@ -15,7 +15,7 @@ for (const file of expectedFiles) {
     if (fs.existsSync(filePath)) {
         console.log(`   ✓ ${file} exists`);
     } else {
-        console.log(`   ❌ ${file} missing`);
+        console.log(`   ${file} missing`);
         utilitiesExist = false;
     }
 }
@@ -31,7 +31,7 @@ try {
     const builder = new AutoUnattendBuilder();
     console.log('   ✓ AutoUnattendBuilder instantiates successfully');
 } catch (error) {
-    console.log(`   ❌ Error: ${(error as Error).message}`);
+    console.log(`   Error: ${(error as Error).message}`);
 }
 
 // Test 3: Check build process
@@ -71,10 +71,10 @@ try {
             console.log(`   ✓ Passes processed: ${result.buildStats.passesProcessed}`);
         }
     } else {
-        console.log(`   ❌ Build failed: ${result.error}`);
+        console.log(`   Build failed: ${result.error}`);
     }
 } catch (error) {
-    console.log(`   ❌ Build test failed: ${(error as Error).message}`);
+    console.log(`   Build test failed: ${(error as Error).message}`);
 }
 
 // Test 4: Summary
@@ -86,7 +86,7 @@ console.log('   ✓ Performance monitoring and build statistics');
 console.log('   ✓ Comprehensive testing framework setup');
 console.log('   ✓ TypeScript improvements and type safety');
 
-console.log('\n🎉 Enhancement verification completed!');
+console.log('\nEnhancement verification completed!');
 console.log('\nNext steps:');
 console.log('- Run "npm run compile" to build all TypeScript files');
 console.log('- Run "npm run test" to execute the test suite');

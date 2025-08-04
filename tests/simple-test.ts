@@ -13,7 +13,7 @@ function test(name: string, fn: () => void): void {
         fn();
         console.log(`  ✓ PASSED`);
     } catch (error) {
-        console.log(`  ❌ FAILED: ${(error as Error).message}`);
+        console.log(`  FAILED: ${(error as Error).message}`);
     }
 }
 

@@ -186,22 +186,22 @@ export class XmlValidator {
 
     public generateValidationReport(result: ValidationResult): string {
         let report = '\n=== XML Validation Report ===\n';
-        report += `Status: ${result.isValid ? '✅ VALID' : '❌ INVALID'}\n\n`;
+        report += `Status: ${result.isValid ? 'VALID' : 'INVALID'}\n\n`;
 
         if (result.errors.length > 0) {
-            report += '🚨 ERRORS:\n';
+            report += 'ERRORS:\n';
             result.errors.forEach(error => report += `  • ${error}\n`);
             report += '\n';
         }
 
         if (result.warnings.length > 0) {
-            report += '⚠️  WARNINGS:\n';
+            report += 'WARNINGS:\n';
             result.warnings.forEach(warning => report += `  • ${warning}\n`);
             report += '\n';
         }
 
         if (result.suggestions.length > 0) {
-            report += '💡 SUGGESTIONS:\n';
+            report += 'SUGGESTIONS:\n';
             result.suggestions.forEach(suggestion => report += `  • ${suggestion}\n`);
             report += '\n';
         }
