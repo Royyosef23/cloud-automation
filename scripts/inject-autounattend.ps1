@@ -133,6 +133,52 @@ function Copy-PostInstallScripts {
     }
 }
 
+function Copy-SetupCompleteScript {
+    param(
+        [string]$ScriptsSourceDir,
+        [string]$IsoPath
+    )
+    
+    Write-Log "Copying SetupComplete.cmd script for post-OOBE restart..."
+    
+    try {
+        # Create the correct $OEM$ directory structure for SetupComplete.cmd
+        $setupScriptsDir = Join-Path $IsoPath "`$OEM`$\`$`$\Setup\Scripts"
+        
+        if (-not (Test-Path $setupScriptsDir)) {
+            Write-Log "Creating setup scripts directory: $setupScriptsDir"
+            $null = New-Item -Path $setupScriptsDir -ItemType Directory -Force
+        }
+        
+        # Copy SetupComplete.cmd specifically
+        $setupCompleteSource = Join-Path $ScriptsSourceDir "SetupComplete.cmd"
+        if (Test-Path $setupCompleteSource) {
+            $setupCompleteDest = Join-Path $setupScriptsDir "SetupComplete.cmd"
+            Copy-Item -Path $setupCompleteSource -Destination $setupCompleteDest -Force
+            Write-Log "SetupComplete.cmd copied successfully to: $setupCompleteDest" -Level "SUCCESS"
+            
+            # Verify the file was copied correctly
+            if (Test-Path $setupCompleteDest) {
+                $fileSize = (Get-Item $setupCompleteDest).Length
+                Write-Log "SetupComplete.cmd verified - Size: $fileSize bytes" -Level "SUCCESS"
+                Write-Log "This script will restart the PC after OOBE completes" -Level "SUCCESS"
+                return $true
+            } else {
+                Write-Log "Failed to verify SetupComplete.cmd copy" -Level "ERROR"
+                return $false
+            }
+        } else {
+            Write-Log "SetupComplete.cmd not found in: $setupCompleteSource" -Level "WARNING"
+            Write-Log "Post-OOBE restart functionality will not be available" -Level "WARNING"
+            return $false
+        }
+        
+    } catch {
+        Write-Log "Error copying SetupComplete.cmd: $($_.Exception.Message)" -Level "ERROR"
+        return $false
+    }
+}
+
 function Validate-AutounattendXml {
     param([string]$FilePath)
     
@@ -233,10 +279,19 @@ function Main {
     $scriptsSourceDir = Join-Path $projectRoot "unattended\scripts"
     $scriptsSuccess = Copy-PostInstallScripts -ScriptsSourceDir $scriptsSourceDir -IsoPath $ExtractedIsoPath
     
+    # Copy SetupComplete.cmd for post-OOBE restart functionality
+    $setupCompleteSuccess = Copy-SetupCompleteScript -ScriptsSourceDir $scriptsSourceDir -IsoPath $ExtractedIsoPath
+    if (-not $setupCompleteSuccess) {
+        Write-Log "SetupComplete.cmd integration failed - continuing without post-OOBE restart" -Level "WARNING"
+    }
+    
     # Set appropriate permissions
     Set-IsoPermissions -IsoPath $ExtractedIsoPath
     
     Write-Log "autounattend.xml injection completed successfully!" -Level "SUCCESS"
+    if ($setupCompleteSuccess) {
+        Write-Log "SetupComplete.cmd integrated - PC will restart automatically after OOBE" -Level "SUCCESS"
+    }
     Write-Log "The extracted ISO is now ready for building" -Level "SUCCESS"
     exit 0
 }

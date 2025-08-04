@@ -1,43 +1,43 @@
-    <settings pass="oobeSystem">
-        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <OOBE>
-                <HideEULAPage>true</HideEULAPage>
-                <HideLocalAccountScreen>true</HideLocalAccountScreen>
-                <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
-                <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
-                <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
-                <NetworkLocation>Work</NetworkLocation>
-                <ProtectYourPC>1</ProtectYourPC>
-            </OOBE>
-            <UserAccounts>
-                <LocalAccounts>
-                    <LocalAccount wcm:action="add">
-                        <Password>
-                            <Value>Q2xvdWRJVA==</Value>
-                            <PlainText>false</PlainText>
-                        </Password>
-                        <Description>CloudIT Administrator Account</Description>
-                        <DisplayName>CloudIT Admin</DisplayName>
-                        <Group>Administrators</Group>
-                        <Name>cloudit</Name>
-                    </LocalAccount>
-                </LocalAccounts>
-            </UserAccounts>
-            <AutoLogon>
-                <Password>
-                    <Value>Q2xvdWRJVA==</Value>
-                    <PlainText>false</PlainText>
-                </Password>
-                <Enabled>true</Enabled>
-                <LogonCount>1</LogonCount>
-                <Username>cloudit</Username>
-            </AutoLogon>
-            <FirstLogonCommands>
-                <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c powershell.exe -ExecutionPolicy Bypass -File C:\Windows\Setup\Scripts\setup.ps1</CommandLine>
-                    <Description>Run post-installation setup script</Description>
-                    <Order>1</Order>
-                </SynchronousCommand>
-            </FirstLogonCommands>
-        </component>
-    </settings>
+<settings pass="oobeSystem">
+    <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <InputLocale>en-US</InputLocale>
+      <SystemLocale>en-US</SystemLocale>
+      <UILanguage>en-US</UILanguage>
+      <UserLocale>he-IL</UserLocale>
+      <GeoID>98</GeoID> <!-- 98 = Israel -->
+    </component>
+
+    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <!-- Force OOBE flow with Microsoft/AzureAD sign-in -->
+      <OOBE>
+        <HideEULAPage>true</HideEULAPage>
+        <HideLocalAccountScreen>false</HideLocalAccountScreen>
+        <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+        <HideOnlineAccountScreens>false</HideOnlineAccountScreens>
+        <HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+        <NetworkLocation>Work</NetworkLocation>
+        <ProtectYourPC>3</ProtectYourPC> <!-- 3 = disable all privacy defaults -->
+        <UnattendEnableRetailDemo>false</UnattendEnableRetailDemo>
+      </OOBE>
+
+      <RegisteredOrganization>CloudIT</RegisteredOrganization>
+      <RegisteredOwner>IT Admin</RegisteredOwner>
+
+      <!-- Prevent Cortana, tailored experiences, and ad tracking -->
+      <DisableAutoDaylightTimeSet>true</DisableAutoDaylightTimeSet>
+      <EnableCortana>false</EnableCortana>
+      <DoNotLaunchFirstUseWelcomeScreen>true</DoNotLaunchFirstUseWelcomeScreen>
+      
+      <!-- Copy SetupComplete.cmd script that will restart after OOBE -->
+      <CopyProfile>false</CopyProfile>
+    </component>
+
+    <component name="Microsoft-Windows-PrivacyConsentSettings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <TailoredExperiencesWithDiagnosticDataEnabled>false</TailoredExperiencesWithDiagnosticDataEnabled>
+      <LocationServicesEnabled>false</LocationServicesEnabled>
+      <FindMyDeviceEnabled>false</FindMyDeviceEnabled>
+      <AdvertisingIDEnabled>false</AdvertisingIDEnabled>
+      <InputPersonalizationEnabled>false</InputPersonalizationEnabled>
+      <DiagnosticDataSetting>0</DiagnosticDataSetting> <!-- 0 = required only -->
+    </component>
+  </settings>
